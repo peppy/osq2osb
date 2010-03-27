@@ -37,7 +37,7 @@ namespace osq.TreeNode {
 
             // TODO Clean up
             using(var inputFile = File.Open(filePath, FileMode.Open, FileAccess.Read)) {
-                using(var reader = new LocatedTextReaderWrapper(inputFile, new Location(filePath), wraperOwnsStream: false)) {
+                using(var reader = new LocatedTextReaderWrapper(inputFile, new Location(filePath), wrapperOwnsStream: false)) {
                     foreach(var node in (new Parser(parentParser, reader)).ReadNodes()) {
                         output.Append(node.Execute(context));
                     }

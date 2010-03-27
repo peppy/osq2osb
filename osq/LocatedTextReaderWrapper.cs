@@ -87,7 +87,7 @@ namespace osq {
         /// </summary>
         /// <param name="source">The stream to wrap the <see cref="LocatedTextReaderWrapper"/> around.</param>
         public LocatedTextReaderWrapper(Stream source) :
-            this(source, new Location()) {
+            this(source, new Location(), true) {
         }
 
         /// <summary>
@@ -95,10 +95,10 @@ namespace osq {
         /// </summary>
         /// <param name="source">The stream to wrap the <see cref="LocatedTextReaderWrapper"/> around.</param>
         /// <param name="location">The starting location of the stream.</param>
-        /// <param name="wraperOwnsStream">If set to <c>true</c>, <paramref name="source"/> will be disposed when the <see cref="LocatedTextReaderWrapper"/> is disposed.</param>
-        public LocatedTextReaderWrapper(Stream source, Location location, bool wraperOwnsStream = true) :
+        /// <param name="wrapperOwnsStream">If set to <c>true</c>, <paramref name="source"/> will be disposed when the <see cref="LocatedTextReaderWrapper"/> is disposed.</param>
+        public LocatedTextReaderWrapper(Stream source, Location location, bool wrapperOwnsStream = true) :
             this(new StreamReader(source), location) {
-            this.mustDisposeSource = wraperOwnsStream;
+            this.mustDisposeSource = wrapperOwnsStream;
         }
 
         /// <summary>

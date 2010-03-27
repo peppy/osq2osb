@@ -10,7 +10,7 @@ namespace osq {
         }
 
         public ParserOptions() {
-            AllowVariableShorthand = true;
+            AllowVariableShorthand = false;
         }
 
         public ParserOptions Clone() {
