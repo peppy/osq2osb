@@ -2,3 +2,6 @@
 */obj/
 *.csproj.user
 *.suo
+
+.DS_Store
+Staging/NewBuild/
